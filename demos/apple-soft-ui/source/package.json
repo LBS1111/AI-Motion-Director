@@ -1,0 +1,1 @@
+{"name":"ai-motion-director-github-demos","version":"1.0.0","private":true,"scripts":{"stills":"node render.cjs stills","render":"node render.cjs media"},"dependencies":{"@remotion/bundler":"4.0.484","@remotion/renderer":"4.0.484","react":"19.1.1","react-dom":"19.1.1","remotion":"4.0.484"}}

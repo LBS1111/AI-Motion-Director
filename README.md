@@ -4,6 +4,20 @@
 
 An open-source AI motion director for Codex that turns natural-language briefs into motion design plans and videos. It selects suitable tools and skills, then learns reusable patterns from new skills and video references with user approval.
 
+## Apple Soft UI motion showcase
+
+Five short conceptual films show the director's visual language. Each GIF opens the full MP4; [source and production notes](demos/apple-soft-ui/README.md) are included.
+
+[![AI Motion Director](demos/apple-soft-ui/previews/01_AI-Motion-Director_Intro.gif)](demos/apple-soft-ui/videos/01_AI-Motion-Director_Intro.mp4)
+
+| Brief → Scene | Route |
+| --- | --- |
+| [![Brief to scene](demos/apple-soft-ui/previews/02_Brief-to-Scene.gif)](demos/apple-soft-ui/videos/02_Brief-to-Scene.mp4) | [![Skill routing](demos/apple-soft-ui/previews/03_Skill-Routing.gif)](demos/apple-soft-ui/videos/03_Skill-Routing.mp4) |
+
+| Direct | Review → Learn |
+| --- | --- |
+| [![2.5D camera](demos/apple-soft-ui/previews/04_2.5D-Camera.gif)](demos/apple-soft-ui/videos/04_2.5D-Camera.mp4) | [![Reviewed learning](demos/apple-soft-ui/previews/05_Review-and-Learn.gif)](demos/apple-soft-ui/videos/05_Review-and-Learn.mp4) |
+
 ## Install for Codex
 
 Run this one command in a terminal to install the skill globally for Codex:
