@@ -2,6 +2,8 @@
 
 Five original, silent, 4-second films in a restrained gray Apple Soft UI / neumorphic style. These are conceptual motion demonstrations, not recordings of Codex or actual routing and learning operations. The reviewed-learning clip places a visible review step before the reusable rule.
 
+[Watch all five in one 20-second showreel](videos/00_Showreel.mp4).
+
 | Film | Visual idea | Media |
 | --- | --- | --- |
 | Project name | A raised capsule expands, reveals “AI Motion Director”, then returns to the same empty surface. | [MP4](videos/01_AI-Motion-Director_Intro.mp4) · [GIF](previews/01_AI-Motion-Director_Intro.gif) |

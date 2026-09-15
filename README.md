@@ -8,6 +8,8 @@ An open-source AI motion director for Codex that turns natural-language briefs i
 
 Five short conceptual films show the director's visual language. Each GIF opens the full MP4; [source and production notes](demos/apple-soft-ui/README.md) are included.
 
+[Watch the 20-second showreel](demos/apple-soft-ui/videos/00_Showreel.mp4).
+
 [![AI Motion Director](demos/apple-soft-ui/previews/01_AI-Motion-Director_Intro.gif)](demos/apple-soft-ui/videos/01_AI-Motion-Director_Intro.mp4)
 
 | Brief → Scene | Route |

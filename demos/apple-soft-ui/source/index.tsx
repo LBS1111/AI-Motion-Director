@@ -6,14 +6,14 @@ const clamp=(v:number)=>Math.max(0,Math.min(1,v));
 const ease=(v:number)=>{const x=clamp(v);return x*x*x*(10+x*(-15+6*x));};
 const step=(t:number,a:number,d:number)=>ease((t-a)/d);
 const visibility=(t:number,a:number,b:number,c:number,d:number)=>step(t,a,b)*(1-step(t,c,d));
-const ink='#3E454A',paper='#E3E6E8',stage='#D8DCDF';
+const ink='#3E454A',paper='#DDE1E4',stage='#CBD1D5';
 const font='Segoe UI, Microsoft YaHei UI, Microsoft YaHei, sans-serif';
-const softShadow='18px 18px 40px rgba(88,97,105,.24), -16px -16px 37px rgba(255,255,255,.78), inset 1px 1px 2px rgba(255,255,255,.83), inset -1px -1px 2px rgba(85,94,102,.18)';
-const insetShadow='inset 8px 8px 18px rgba(95,104,112,.18), inset -8px -8px 18px rgba(255,255,255,.80), 1px 1px 3px rgba(255,255,255,.82)';
+const softShadow='18px 18px 40px rgba(88,97,105,.27), -16px -16px 37px rgba(255,255,255,.68), inset 1px 1px 2px rgba(255,255,255,.75), inset -1px -1px 2px rgba(85,94,102,.20)';
+const insetShadow='inset 8px 8px 18px rgba(95,104,112,.23), inset -8px -8px 18px rgba(255,255,255,.73), 1px 1px 3px rgba(255,255,255,.75)';
 const time=()=>useCurrentFrame()/FPS;
 
-const Stage:React.FC<{children:React.ReactNode}>=({children})=><AbsoluteFill style={{background:`radial-gradient(ellipse at 50% 34%, #EDF0F2 0%, ${stage} 78%)`,overflow:'hidden',fontFamily:font,color:ink}}>{children}</AbsoluteFill>;
-const Soft:React.FC<{style?:React.CSSProperties;children?:React.ReactNode;inner?:boolean}>=({style,children,inner})=><div style={{background:paper,border:'1px solid rgba(255,255,255,.74)',boxShadow:inner?insetShadow:softShadow,...style}}>{children}</div>;
+const Stage:React.FC<{children:React.ReactNode}>=({children})=><AbsoluteFill style={{background:`radial-gradient(ellipse at 50% 34%, #E9ECEE 0%, ${stage} 78%)`,overflow:'hidden',fontFamily:font,color:ink}}>{children}</AbsoluteFill>;
+const Soft:React.FC<{style?:React.CSSProperties;children?:React.ReactNode;inner?:boolean}>=({style,children,inner})=><div style={{background:paper,border:'1px solid rgba(255,255,255,.64)',boxShadow:inner?insetShadow:softShadow,...style}}>{children}</div>;
 const Word:React.FC<{children:React.ReactNode;style?:React.CSSProperties}>=({children,style})=><div style={{fontWeight:300,letterSpacing:'.055em',whiteSpace:'nowrap',...style}}>{children}</div>;
 
 const Intro=()=>{const t=time();const show=visibility(t,.22,.48,3.38,.40),expand=step(t,.70,.85)*(1-step(t,3.05,.55));const w=112+970*expand;const h=100+44*expand;const text=visibility(t,1.12,.52,2.91,.42);const mark=visibility(t,.54,.47,3.04,.45);
@@ -45,7 +45,7 @@ const Brief=()=>{const t=time();const show=visibility(t,.18,.47,3.45,.38);const 
 };
 
 const RouteIcon:React.FC<{type:number}>=({type})=>type===0?<div style={{width:68,height:68,borderRadius:'50%',boxShadow:insetShadow}}/>:type===1?<div style={{width:79,height:56,borderRadius:15,boxShadow:insetShadow}}/>:<div style={{width:70,height:70,borderRadius:17,transform:'rotate(45deg)',boxShadow:insetShadow}}/>;
-const Route=()=>{const t=time();const source=visibility(t,.22,.42,1.93,.37);const converge=step(t,1.05,.88);const hub=visibility(t,1.42,.55,3.36,.41);const sel=visibility(t,2.06,.45,3.12,.35);const line=visibility(t,.96,.3,2.03,.30);
+const Route=()=>{const t=time();const source=visibility(t,.22,.42,1.93,.37);const converge=step(t,1.05,.88);const hub=visibility(t,1.42,.55,3.36,.41);const sel=visibility(t,1.72,.50,3.12,.35);const line=visibility(t,.96,.3,2.03,.30);
  return <Stage>
   <svg style={{position:'absolute',inset:0,opacity:line}} width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
     {[360,540,720].map((y,i)=><path key={i} d={`M500 ${y} C610 ${y}, 620 540, 770 540`} fill="none" stroke="#A3ACB2" strokeWidth="5" strokeDasharray="450" strokeDashoffset={450*(1-step(t,1.12+i*.1,.76))} strokeLinecap="round"/>) }
