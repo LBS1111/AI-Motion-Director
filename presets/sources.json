@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "policy": "Install source skills separately. Discovery may create analysis drafts; no preset becomes approved long-term memory or an executable router capability without the user's review.",
+  "sources": [
+    {
+      "id": "vibe-motion",
+      "repo": "vibe-motion/skills",
+      "revision_reviewed": "cb3c905",
+      "license": "No repository-wide LICENSE found; check each skill and asset before redistribution",
+      "skills": ["3d-chladni-render", "brand-launch-video-star", "claude-typer", "disney-animation-rule-skill", "fisheye-motion", "light-spotlight-render", "pixel2motion", "printed-curtain-render", "procedural-fish-render", "remotion-3d-ticker", "remotion-candlestick", "remotion-vinyl-player", "ruler-progress-render", "threejs-earth-render", "wechat-2d-render"],
+      "candidate_uses": ["product launch", "logo motion", "2.5D and 3D camera", "procedural motion", "Remotion render", "motion principles"]
+    },
+    {
+      "id": "kinetic-typography",
+      "repo": "iart-ai/kinetic-typography-skills",
+      "revision_reviewed": "fccc94b",
+      "license": "MIT",
+      "skills": ["kinetic-typography"],
+      "candidate_uses": ["headline reveal", "word and character stagger", "lyric and title motion"]
+    },
+    {
+      "id": "framer-motion",
+      "repo": "C-Jeril/framer-motion-skills",
+      "revision_reviewed": "837d726",
+      "license": "MIT",
+      "skills": ["framer-motion-core", "framer-motion-react", "framer-motion-variants", "framer-motion-scroll", "framer-motion-gestures", "framer-motion-layout"],
+      "candidate_uses": ["React UI motion", "variants", "scroll", "gestures", "shared layout"]
+    },
+    {
+      "id": "video-shotcraft",
+      "repo": "Vincentwei1021/video-shotcraft",
+      "revision_reviewed": "5e71af3",
+      "license": "Apache-2.0",
+      "skills": ["video-shotcraft"],
+      "candidate_uses": ["product film", "shot recipe cards", "real page screenshots", "Remotion and sound design"]
+    }
+  ]
+}

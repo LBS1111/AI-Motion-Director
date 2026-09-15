@@ -212,6 +212,7 @@ class DirectorTests(unittest.TestCase):
     def test_english_alias_does_not_match_inside_build(self):
         self.assertNotIn("ui-motion", inferred_capabilities("build a plugin"))
         self.assertIn("ui-motion", inferred_capabilities("Animate UI cards"))
+        self.assertIn("ui-motion", inferred_capabilities("Framer Motion variants for React animation"))
 
     def test_source_update_supersedes_old_pending_candidate(self):
         self.draft()

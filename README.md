@@ -14,6 +14,27 @@ npx --yes skills add LBS1111/AI-Motion-Director --skill codex-motion-director -g
 
 This uses the [Skills CLI](https://github.com/vercel-labs/skills) and requires Node.js/npm. Start a new Codex task after installation; if the skill does not appear, restart Codex. Mention `$codex-motion-director` to invoke it explicitly, or describe a motion project in natural language for automatic selection. Python 3.11+ is needed for the local director tools, and FFmpeg is needed for video extraction and MP4 checks.
 
+## Optional preset skill packs
+
+The director can discover and analyze third-party skills after they are installed. The four reviewed source repositories provide 23 individual skills:
+
+| Source | Skills | Good starting points |
+| --- | ---: | --- |
+| [Vibe Motion](https://github.com/vibe-motion/skills) | 15 | Product films, logo motion, 3D cameras, Remotion effects |
+| [Kinetic Typography](https://github.com/iart-ai/kinetic-typography-skills) | 1 | Animated headlines, staggered text, lyric and title cards |
+| [Framer Motion](https://github.com/C-Jeril/framer-motion-skills) | 6 | React UI animation, scroll, gestures, variants and layout |
+| [Video Shotcraft](https://github.com/Vincentwei1021/video-shotcraft) | 1 | Product films from shot cards, real page captures and sound |
+
+From a checkout of this repository, install all four packs globally for Codex with one command:
+
+```sh
+python scripts/install_presets.py
+```
+
+Use `--dry-run` to see the commands, or `--only framer-motion` (repeat `--only` for several packs). This installer runs the upstream Skills CLI for each repository; it does not copy their code into this MIT-licensed project. Their source revisions and licenses are recorded in [the preset registry](presets/sources.json). Video and web animation engines still need to be checked for a specific project.
+
+Installing makes each skill available to Codex on the next task. The director's next scan discovers candidates, but its router and permanent memory only gain a new capability after you review and approve the specific analysis. A preset name or repository README alone is not implementation validation.
+
 ## Get started
 
 Tell Codex what you want to make or learn:
@@ -32,6 +53,7 @@ The project combines a **Codex skill and local tools**. Codex interprets the bri
 
 - `SKILL.md`: The entry point for automatic skill selection and the directing workflow.
 - `router/`: Capability terms, routing rules, and the first three tool adapters.
+- `presets/`: Upstream source, license, revision and skill inventory for optional packs.
 - `knowledge/`: Motion physics, easing, camera language, and composition.
 - `learning/`: Guides for learning from new skills and video references.
 - `references/`: Production, approval, operation, and quality guidance.

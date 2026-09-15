@@ -1,6 +1,6 @@
 {
   "product-launch": ["产品发布", "产品介绍", "发布会", "product launch", "product promo", "营销视频"],
-  "ui-motion": ["ui", "界面", "卡片", "card", "dashboard", "产品动效"],
+  "ui-motion": ["ui", "界面", "卡片", "card", "dashboard", "产品动效", "framer-motion", "react animation", "layout animation", "scroll-linked animation", "gesture-based animation", "animation variants"],
   "camera": ["镜头", "运镜", "camera", "dolly", "orbit", "空间", "3d", "three.js", "2.5d"],
   "typography": ["文字", "排版", "字幕", "typography", "text", "打字"],
   "physics": ["物理", "惯性", "弹簧", "spring", "physics", "缓动", "动画原则"],
