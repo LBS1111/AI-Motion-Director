@@ -4,44 +4,44 @@
 
 An open-source AI motion director for Codex that turns natural-language briefs into motion design plans and videos. It selects suitable tools and skills, then learns reusable patterns from new skills and video references with user approval.
 
-## 直接使用
+## Get started
 
-在 Codex 中说：
+Tell Codex what you want to make or learn:
 
-> 做一个20秒、高级简约风格的AI产品介绍动画，先给我两个方案。
+> Create a 20-second AI product introduction in a minimal, premium style. Show me two concepts first.
 
-> 学习这个新的动效 Skill，解释它用什么工具、能做什么，整理后让我确认。
+> Learn this new motion skill. Explain its tools and capabilities, then let me review what you propose to save.
 
-> 学习这个视频里的卡片展开和镜头推进，只提炼规律，先不要入库。
+> Study the card expansion and camera push in this video. Extract reusable motion principles, but do not save them yet.
 
-> 查看已学会的能力，告诉我哪些已实际验证过。
+> Show me what the director has learned and which capabilities have been tested in practice.
 
-本项目是 **Skill + 本地工具**。语义理解与设计由 Codex 执行；脚本负责扫描、存储、确认版本、检索和媒体校验。没有后台模型、常驻监听或自动付费调用。
+The project combines a **Codex skill and local tools**. Codex interprets the brief and makes design decisions. Local scripts handle skill discovery, storage, versioned approval, search, and media checks. There is no background model process or automatic paid service call.
 
-## 文件位置
+## Project structure
 
-- `SKILL.md`：自动匹配与工作流入口。
-- `router/`：能力词表、排序规则、首批三种工具适配描述。
-- `knowledge/`：物理、曲线、镜头和构图。
-- `learning/`：新 Skill 与视频案例学习规范。
-- `references/`：操作、确认、制作和验收说明。
-- `scripts/`：本地命令、视频取帧、MP4检查与示例渲染。
-- `assets/implementations/`：原创按秒计算的运动函数。
-- `tests/`：确认边界、路由、恢复、并发写入与实际媒体测试。
+- `SKILL.md`: The entry point for automatic skill selection and the directing workflow.
+- `router/`: Capability terms, routing rules, and the first three tool adapters.
+- `knowledge/`: Motion physics, easing, camera language, and composition.
+- `learning/`: Guides for learning from new skills and video references.
+- `references/`: Production, approval, operation, and quality guidance.
+- `scripts/`: Local commands, video frame extraction, MP4 verification, and a render example.
+- `assets/implementations/`: Original time-based motion functions.
+- `tests/`: Checks for approvals, routing, project recovery, concurrent writes, and real media files.
 
-本机安装时，项目位于 D 盘独立目录；local-config.json 指向仓库外的数据目录。该配置不进入版本控制，私人记忆和媒体不会随源代码分发。
+Personal memory and media are stored outside the repository. A local configuration file points to the data directory and is excluded from version control.
 
-## 学习状态
+## Learning and approval
 
-发现 → 阅读分析 → 展示具体候选 → 用户确认 → 整理入库 → 汇总。
+Discover → analyze → present a specific proposal → get user approval → save → summarize.
 
-确认状态与验证状态独立：已阅读 / 可运行 / 已复现 / 可复用。确认保存并不代表已经运行成功。来源变更会阻止旧实现静默执行。
+Approval and testing are tracked separately. A capability can be **read**, **runnable**, **reproduced**, or **reusable**. Approval means the director may remember it; it does not mean the original tool has run successfully. If the source changes, the director will not silently use an older verified implementation.
 
-提供两种工具适配方案：保留原工具直接接入；按设计规律移植到适合的工具。频繁复用且验证通过的实现再沉淀为自有模块，保留来源和许可。
+External skills can be used through their original tools or adapted from their motion principles to another suitable tool. Frequently used implementations become owned modules only after practical validation, with source and licensing information retained.
 
-## 运行与验证
+## Run and verify
 
-Python 3.11+；PyYAML用于完整元数据解析；FFmpeg用于媒体操作；Pillow只用于渲染示例和GIF测试。第三方视频引擎按任务检查，不自动安装。
+Python 3.11+ is required. PyYAML provides full metadata parsing, and FFmpeg handles media operations. Pillow is used only for the render example and GIF tests. Video engines are checked for each task rather than installed automatically.
 
 ```text
 python scripts/director.py status
@@ -51,18 +51,18 @@ python scripts/director.py report
 python -m unittest discover -s tests -v
 ```
 
-详细操作见 [命令说明](references/commands.md)。不需要用户自己敲命令，Codex 会按 Skill 工作流执行。
+See the [command guide](references/commands.md) for details. Codex runs the workflow for you, so you do not need to enter these commands yourself.
 
-## V1 边界
+## V1 scope
 
-- 扫描在Director启动/恢复时进行；没有常驻后台服务。
-- Router做可解释的标签检索，Codex再作语义与创意判断。
-- 初始学习草稿不自动成为正式能力；第三方引擎没有被批量安装或验证。
-- 示范MP4验证导出链路，不承诺每个外部Skill在本机都能渲染。
-- 自动技术检查不能替代看画面、听声音；未实际检查不得报告完成。
+- Skill discovery runs when the director starts or resumes; there is no always-on monitor.
+- The router provides explainable capability matches, while Codex judges the creative and semantic fit.
+- Initial learning proposals do not become confirmed capabilities automatically. Third-party engines have not been installed or tested in bulk.
+- The example MP4 verifies the export workflow; it does not guarantee that every external skill can render on the current machine.
+- Technical checks cannot replace watching the video and listening to its audio. A project is not marked complete without those reviews.
 
-## 开源许可证
+## License
 
-本项目采用 [MIT License](LICENSE)，免费开源，允许使用、修改、分发和商业使用。分发本项目或其重要部分时，须保留版权声明与许可证。
+This project is free and open source under the [MIT License](LICENSE). You may use, modify, distribute, and use it commercially. Keep the copyright notice and license when distributing the project or substantial parts of it.
 
-本许可证适用于本仓库的原创代码和文档。外部 Skill、依赖、素材与服务仍遵循各自的许可证和收费规则；本项目免费不代表外部模型或服务免费。
+The license covers the original code and documentation in this repository. External skills, dependencies, assets, and services retain their own licenses and pricing terms.
