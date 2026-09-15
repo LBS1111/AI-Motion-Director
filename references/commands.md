@@ -6,7 +6,7 @@
 
 `python scripts/director.py --home D:/codex-motion-director-data init --root 用户Skill目录`
 
-重复 init 保留已有配置和记忆。新增持久扫描目录编辑数据目录 config.json 的 skill_roots；临时根用 `scan --root 路径`。只扫描已配置本地目录；URL 先由 Codex 用可用工具读取，用户授权下载后放到暂存目录分析。
+不传 `--root` 时，默认索引用户目录的 `.codex/skills` 与 `.agents/skills`，兼容 Codex 内置安装方式和 README 中的一键安装方式。重复 init 保留已有配置和记忆。新增持久扫描目录编辑数据目录 config.json 的 skill_roots；临时根用 `scan --root 路径`。只扫描已配置本地目录；URL 先由 Codex 用可用工具读取，用户授权下载后放到暂存目录分析。
 
 本地 local-config.json（不提交仓库）只含 data_home。优先级：`--home` > `MOTION_DIRECTOR_HOME` > local-config.json > 用户目录。配置支持 disabled_paths；读取 host_config 中 skills.config 的 enabled=false。扫描根不可用时报告，不删除已确认知识。
 

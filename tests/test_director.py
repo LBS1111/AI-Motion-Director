@@ -45,6 +45,13 @@ class DirectorTests(unittest.TestCase):
         self.assertEqual(before, self.engine.store_path.read_bytes())
         self.assertEqual(self.engine.search(), [])
 
+    def test_default_install_locations_cover_codex_and_agents(self):
+        fresh = Engine(self.root / "fresh-data")
+        fresh.init()
+        roots = set(fresh.config()["skill_roots"])
+        self.assertIn(str((Path.home() / ".codex/skills").resolve()), roots)
+        self.assertIn(str((Path.home() / ".agents/skills").resolve()), roots)
+
     def test_incremental_scan_idempotent(self):
         self.engine.scan()
         self.assertEqual(self.engine.scan()["new_candidates"], [])

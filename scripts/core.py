@@ -225,7 +225,9 @@ class Engine:
                 folder.mkdir(parents=True, exist_ok=True)
             config = self.home / "config.json"
             if not config.exists():
-                atomic_json(config, {"schema_version": 1, "skill_roots": [str(Path(r).expanduser().resolve()) for r in (roots or [])], "disabled_paths": [], "host_config": str(Path.home() / ".codex/config.toml")})
+                default_roots = [Path.home() / ".codex/skills", Path.home() / ".agents/skills"]
+                selected_roots = roots or default_roots
+                atomic_json(config, {"schema_version": 1, "skill_roots": [str(Path(r).expanduser().resolve()) for r in selected_roots], "disabled_paths": [], "host_config": str(Path.home() / ".codex/config.toml")})
             if not self.store_path.exists():
                 atomic_json(self.store_path, fresh_store())
             self.refresh_views(self.load())

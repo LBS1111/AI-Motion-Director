@@ -4,6 +4,16 @@
 
 An open-source AI motion director for Codex that turns natural-language briefs into motion design plans and videos. It selects suitable tools and skills, then learns reusable patterns from new skills and video references with user approval.
 
+## Install for Codex
+
+Run this one command in a terminal to install the skill globally for Codex:
+
+```sh
+npx --yes skills add LBS1111/AI-Motion-Director --skill codex-motion-director -g -a codex -y
+```
+
+This uses the [Skills CLI](https://github.com/vercel-labs/skills) and requires Node.js/npm. Start a new Codex task after installation; if the skill does not appear, restart Codex. Mention `$codex-motion-director` to invoke it explicitly, or describe a motion project in natural language for automatic selection. Python 3.11+ is needed for the local director tools, and FFmpeg is needed for video extraction and MP4 checks.
+
 ## Get started
 
 Tell Codex what you want to make or learn:
