@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-让用户用自然语言描述动效目标，由 Codex 理解内容、选择能力、制作视频；新 Skill 和视频案例先形成学习摘要，经用户确认后成为长期能力。
+An open-source AI motion director for Codex that turns natural-language briefs into motion design plans and videos. It selects suitable tools and skills, then learns reusable patterns from new skills and video references with user approval.
 
 ## 直接使用
 
