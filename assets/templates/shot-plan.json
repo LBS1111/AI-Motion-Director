@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "shots": [{
+    "id": "shot-01", "start": 0, "end": 4,
+    "message": "观众需要理解的一个信息", "hero": "真实产品对象",
+    "source_assets": [], "visible_text": [],
+    "camera": {"purpose": "建立关系", "anchor": "主体", "movement": "static"},
+    "motion": {"anticipation": 0, "action": 0.6, "settle": 0.3, "hold": 3.1},
+    "start_state": "主体可辨认", "end_state": "稳定阅读",
+    "implementation_id": null, "pattern_ids": [], "status": "draft"
+  }]
+}

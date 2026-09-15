@@ -1,0 +1,13 @@
+{
+  "kind": "skill", "title": "摆动聚光灯文字揭示", "role": "specialist",
+  "summary": "通过可配置摆动灯光遮罩揭示文字，原输出为独立HTML动画。",
+  "capabilities": ["typography", "logo", "mg"],
+  "design": {"purpose": "用灯光扫过形成渐进揭示", "use_when": ["明确要求聚光灯扫字", "灯光揭示Logo文字"], "avoid_when": ["禁止明显发光且无灯光语义的场景"]},
+  "implementation": {"strategy": "direct", "engines": ["svg", "html", "python"], "details": "Python填充HTML/SVG模板，参数控制摆角、周期、灯体尺度与颜色；保留灯尖缩放轴心。", "limitations": ["原工具只生成HTML，不直接生成MP4", "视频交付需要额外可验证的浏览器捕获和编码流程", "默认发光强度可能与个人偏好冲突，需根据本次需求克制调整"]},
+  "dependencies": [{"type": "executable", "name": "python"}, {"type": "manual", "name": "browser-preview", "note": "预览需浏览器；导出视频需要另一个经过验证的实现"}],
+  "inputs": ["copy"], "outputs": ["html"],
+  "evidence": [{"source": "light-spotlight-render/SKILL.md", "observation": "主输出明确为HTML，支持灯光摆动和文字揭示参数"}, {"source": "light-spotlight-render/scripts/render_light_spotlight.py", "observation": "读取模板，转义标签文字、限制数值范围、替换参数并写HTML"}],
+  "verification": {"level": "read", "evidence": []},
+  "provenance": {"license": "unknown", "copy_permission": "not-established", "usage": "Reference installed tool, do not copy template"},
+  "overlaps": ["文字揭示知识"], "conflicts": ["发光效果不是默认审美；仅明确需要时选择"], "related_ids": []
+}

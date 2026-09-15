@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Motion Director analysis contract v1",
+  "type": "object",
+  "required": ["kind", "title", "summary"],
+  "properties": {
+    "kind": {"enum": ["skill", "pattern", "implementation", "preference"]},
+    "title": {"type": "string", "minLength": 1},
+    "summary": {"type": "string", "minLength": 1},
+    "role": {"enum": ["primary", "specialist"]},
+    "capabilities": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "design": {"type": "object", "required": ["purpose"], "properties": {"purpose": {"type": "string", "minLength": 1}}},
+    "implementation": {"type": "object", "required": ["strategy", "engines", "details", "limitations"], "properties": {"strategy": {"enum": ["direct", "adapt", "own", "knowledge-only"]}, "engines": {"type": "array", "items": {"type": "string"}}, "details": {"type": "string", "minLength": 1}, "limitations": {"type": "array", "items": {"type": "string"}}}},
+    "dependencies": {"type": "array", "items": {"type": "object", "required": ["type", "name"], "properties": {"type": {"enum": ["executable", "path", "manual"]}, "name": {"type": "string", "minLength": 1}, "value": {"type": "string"}, "note": {"type": "string"}}}},
+    "inputs": {"type": "array", "items": {"type": "string"}},
+    "outputs": {"type": "array", "items": {"type": "string"}},
+    "overlaps": {"type": "array", "items": {"type": "string"}},
+    "conflicts": {"type": "array", "items": {"type": "string"}},
+    "related_ids": {"type": "array", "items": {"type": "string"}},
+    "evidence": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["source", "observation"], "properties": {"source": {"type": "string", "minLength": 1}, "observation": {"type": "string", "minLength": 1}, "inference": {"type": "string"}, "time_range": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number", "minimum": 0}}}}},
+    "verification": {"type": "object", "required": ["level", "evidence"], "properties": {"level": {"enum": ["read", "runnable", "reproduced", "reusable"]}, "evidence": {"type": "array", "items": {"type": "object", "required": ["path", "sha256", "result"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "result": {"type": "string"}}}}}},
+    "provenance": {"type": "object", "required": ["license", "copy_permission"], "properties": {"license": {"type": "string", "minLength": 1}, "copy_permission": {"type": "string", "minLength": 1}}},
+    "action": {"enum": ["like", "avoid", "favorite", "reject-pattern"]},
+    "value": {"type": "string", "minLength": 1}
+  },
+  "allOf": [{"if": {"properties": {"kind": {"const": "preference"}}}, "then": {"required": ["action", "value"]}, "else": {"required": ["capabilities", "design", "implementation", "dependencies", "inputs", "outputs", "evidence", "verification", "provenance", "overlaps", "conflicts", "related_ids"]}}]
+}

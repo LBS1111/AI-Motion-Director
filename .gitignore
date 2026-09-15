@@ -1,0 +1,10 @@
+local-config.json
+__pycache__/
+*.pyc
+.venv/
+.test-output/
+*.mp4
+*.gif
+*.mov
+*.png
+*.jpg

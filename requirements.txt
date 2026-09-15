@@ -1,0 +1,3 @@
+PyYAML>=6.0,<7
+# Optional: only needed for the bundled original rendering demonstration.
+Pillow>=10.0,<13

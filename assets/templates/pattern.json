@@ -1,0 +1,12 @@
+{
+  "kind": "pattern", "title": "空间展开后聚焦主角",
+  "summary": "先建立整体关系，再用一次有目的的推进突出重点。",
+  "capabilities": ["camera", "ui-motion"],
+  "design": {"purpose": "总览转重点", "phases": ["错峰展开", "稳定阅读", "推进聚焦"], "use_when": ["整体结构需先被理解"], "avoid_when": ["主体只有一个且无需交代关系"]},
+  "implementation": {"strategy": "adapt", "engines": ["threejs"], "details": "相机沿视线推进；分离世界和局部变换", "limitations": ["二维缩放模拟不等价于真实相机"]},
+  "dependencies": [], "inputs": ["content"], "outputs": ["design"],
+  "evidence": [{"source": "填写本次真实来源", "time_range": [0, 2], "observation": "填写实际观察", "inference": "填写不确定部分"}],
+  "verification": {"level": "read", "evidence": []},
+  "provenance": {"license": "unknown", "copy_permission": "not-established"},
+  "overlaps": [], "conflicts": [], "related_ids": []
+}

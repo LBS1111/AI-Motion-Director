@@ -1,0 +1,13 @@
+{
+  "kind": "skill", "title": "AE 思维与代码动效制作", "role": "primary",
+  "summary": "从真实内容和视觉层级出发，设计速度曲线、镜头与时间轴，再由适合的代码工具制作和验收。",
+  "capabilities": ["product-launch", "ui-motion", "camera", "typography", "physics", "mg", "tutorial", "render"],
+  "design": {"purpose": "用运动解释真实内容而不是套装饰", "phases": ["传播命题", "视觉单元", "速度曲线与镜头", "时间轴", "预览和交付"], "use_when": ["教程包装", "产品介绍", "MG与UI混合制作"], "avoid_when": ["仅转码", "仅需一个专项默认演示"]},
+  "implementation": {"strategy": "direct", "engines": ["remotion", "canvas", "threejs", "html"], "details": "选择一个主实现，分离内容、时间与运动参数，使用确定性逐帧时间；按需读取生产验收与物理模块。", "limitations": ["这是制作工作流，不是一个已安装渲染引擎", "原默认1080p60必须服从本项目规格", "原学习模块含直接更新Skill的流程，本系统仅允许确认后写自己的记忆"]},
+  "dependencies": [{"type": "manual", "name": "selected-render-engine", "note": "根据本次引擎检查包、版本、字体、素材和导出工具"}],
+  "inputs": ["copy"], "outputs": ["mp4", "source", "design"],
+  "evidence": [{"source": "video-motion-design/SKILL.md", "observation": "定义内容理解、画面、动效、镜头、时间轴、实现与验收的执行链"}, {"source": "video-motion-design/references/production-qa.md", "observation": "要求内容时间参数分离、确定性seek、短段验证和真实媒体检查"}, {"source": "video-motion-design/references/learning.md", "observation": "旧流程可直接更新Skill，需要与本次确认后入库要求隔离"}],
+  "verification": {"level": "read", "evidence": []},
+  "provenance": {"license": "unknown", "copy_permission": "not-established", "usage": "Reference existing installed workflow; no source copied"},
+  "overlaps": ["Director内置物理、镜头与制作流程"], "conflicts": ["原流程默认帧率及直接学习写入规则需服从当前用户要求"], "related_ids": []
+}

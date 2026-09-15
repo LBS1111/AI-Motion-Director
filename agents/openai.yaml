@@ -1,0 +1,6 @@
+interface:
+  display_name: "AI Motion Director"
+  short_description: "理解动效需求，自动组合制作能力，经确认学习新 Skill 与视频案例"
+  default_prompt: "使用 $codex-motion-director 理解我的内容，推荐动效方案并完成视频；新学到的长期规律先让我确认。"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "discovery": "At Director entry and resume; no background daemon; scan only configured roots; host-disabled entries excluded.",
+  "eligibility": ["confirmed", "enabled", "source revision matches", "inputs and output compatible"],
+  "ranking": {"required_capability": 8, "query_term": 1, "favorite": 2, "reproduced": 2, "reusable": 3},
+  "composition": "One primary workflow; greedily add capabilities covering missing requirements; agent must review semantic fit and conflicts.",
+  "execution": "read-level and unknown/missing dependencies remain planning candidates only. No automatic third-party execution.",
+  "fallback": "Generic implementation with explicit validation gaps; never claim an engine or tool is installed without checking.",
+  "limit": 5
+}

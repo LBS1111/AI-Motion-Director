@@ -1,0 +1,13 @@
+{
+  "kind": "skill", "title": "Three.js 地球航线逐帧渲染", "role": "specialist",
+  "summary": "使用真实三维地球与航线，通过浏览器逐帧定位、截图，再编码为GIF或MP4。",
+  "capabilities": ["camera", "mg", "render", "globe-route"],
+  "design": {"purpose": "在地球空间中解释地点与连接", "use_when": ["地球航线", "全球节点", "地理连接"], "avoid_when": ["一般UI卡片", "没有地理意义的装饰运镜"]},
+  "implementation": {"strategy": "direct", "engines": ["threejs", "puppeteer", "ffmpeg"], "details": "原脚本克隆或更新项目，HTTP提供场景，通过__SCENE_3D_EXPORT__.setFrame设置帧，PNG序列再编码；自定义routeConfig后使用skip-update。", "limitations": ["默认是448px宽30fps GIF，制作MP4必须显式指定输出与规格", "原生捕获2048×1152，最终尺寸要另行匹配brief", "首次运行需网络和Puppeteer安装", "此能力尚未在Director中实际执行验证"]},
+  "dependencies": [{"type": "executable", "name": "python"}, {"type": "executable", "name": "git"}, {"type": "executable", "name": "node"}, {"type": "executable", "name": "npm"}, {"type": "executable", "name": "ffmpeg"}, {"type": "manual", "name": "browser-and-network", "note": "检查Puppeteer、Chromium、CDN纹理和仓库访问"}],
+  "inputs": [], "outputs": ["mp4", "gif", "frames"],
+  "evidence": [{"source": "threejs-earth-render/SKILL.md", "observation": "提供默认杭州到巴黎场景、精确帧设置、GIF/MP4输出和网络依赖"}, {"source": "threejs-earth-render/scripts/render_threejs_earth.py", "observation": "实现git更新、本地HTTP、Puppeteer准备、H264与GIF编码；存在自动安装与更新行为，扫描学习时不执行"}],
+  "verification": {"level": "read", "evidence": []},
+  "provenance": {"license": "unknown", "copy_permission": "not-established", "upstream": "https://github.com/vibe-motion/threejs-earth"},
+  "overlaps": ["通用相机知识只部分重叠，此实现专用于地球"], "conflicts": [], "related_ids": []
+}

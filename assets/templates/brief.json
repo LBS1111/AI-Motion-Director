@@ -1,0 +1,9 @@
+{
+  "schema_version": 1, "title": "产品功能介绍",
+  "request": "用高级简约的黑白风格，解释产品如何把信息整理为可执行任务",
+  "kind": "launch", "duration_seconds": 20,
+  "required_capabilities": ["product-launch", "ui-motion", "typography"],
+  "inputs": ["copy", "screenshots"], "output": "mp4",
+  "constraints": {"avoid": ["蓝紫科技风", "霓虹", "无意义缩放"]},
+  "assets": [], "authorization": "planning"
+}
