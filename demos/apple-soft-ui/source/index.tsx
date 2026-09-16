@@ -66,7 +66,7 @@ const WorldCard:React.FC<{left:number;top:number;depth:number;type:number;opacit
   {type===0?<div style={{width:160,height:160,borderRadius:'50%',boxShadow:softShadow,background:'#D7DBDE'}}/>:type===1?<Word style={{fontSize:70}}>DIRECT</Word>:<div style={{display:'flex',gap:22}}>{[0,1,2].map(i=><div key={i} style={{width:60,height:145-i*35,borderRadius:25,boxShadow:softShadow,background:'#D6DBDE'}}/>)}</div>}
  </Soft>;
 const Direct=()=>{const t=time();const traverse=step(t,.45,1.66);const fly=step(t,2.98,.82);const show=step(t,.20,.37)*(1-step(t,3.78,.12));
- return <Stage><CameraRig x={360-365*traverse-2100*fly} y={46-46*traverse+28*fly} z={-340+420*traverse+215*fly} yaw={-25+25*traverse+28*fly} pitch={9-9*traverse-3*fly}>
+ return <Stage><CameraRig x={360-365*traverse-2100*fly} y={46-46*traverse+28*fly} z={-340+420*traverse+410*fly} yaw={-27+39*traverse+25*fly} pitch={10-15*traverse-3*fly}>
   <div style={{position:'absolute',inset:0,opacity:show,transformStyle:'preserve-3d'}}>
     <Soft inner style={{position:'absolute',left:-260,top:300,width:2480,height:500,borderRadius:80,transform:'translateZ(-135px)',opacity:.70}}/>
     <WorldCard left={-140} top={375} depth={30} type={0} opacity={1}/>
