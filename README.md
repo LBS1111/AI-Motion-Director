@@ -20,6 +20,18 @@ Short motion studies created through the director-led workflow: interpret the br
 
 <p align="center"><sub>Split typography · synchronized rolling index · soft UI selection bubble</sub></p>
 
+<p align="center">
+  <img src="assets/demos/workflow-pipeline-reveal.gif" width="880" alt="A compact brief node expanding into a staged planning, camera, rendering, and delivery workflow" />
+</p>
+
+<p align="center"><sub>Staged workflow build · connected capability nodes · result handoff</sub></p>
+
+<p align="center">
+  <img src="assets/demos/inertial-card-deck.gif" width="720" alt="Apple-style card deck entering with spring inertia and handing off between motion design stages" />
+</p>
+
+<p align="center"><sub>Staggered card entrance · damped spring motion · readable spatial handoff</sub></p>
+
 ## Install for Codex
 
 Run this one command in a terminal to install the skill globally for Codex:
