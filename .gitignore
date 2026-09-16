@@ -5,6 +5,7 @@ __pycache__/
 .test-output/
 *.mp4
 *.gif
+!assets/demos/*.gif
 *.mov
 *.png
 *.jpg

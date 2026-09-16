@@ -4,6 +4,22 @@
 
 An open-source AI motion director for Codex that turns natural-language briefs into motion design plans and videos. It selects suitable tools and skills, then learns reusable patterns from new skills and video references with user approval.
 
+## Motion demos
+
+Short motion studies created through the director-led workflow: interpret the brief, design the motion system, render, review, and refine.
+
+<p align="center">
+  <img src="assets/demos/workflow-state-morph.gif" width="360" alt="Workflow state morphing from a compact task card into a full-screen confirmation and project flow" />
+</p>
+
+<p align="center"><sub>Shared-shape state transition · spring timing · staged workflow reveal</sub></p>
+
+<p align="center">
+  <img src="assets/demos/kinetic-capability-selector.gif" width="880" alt="Kinetic typography transforming into a synchronized scrolling capability selector" />
+</p>
+
+<p align="center"><sub>Split typography · synchronized rolling index · soft UI selection bubble</sub></p>
+
 ## Install for Codex
 
 Run this one command in a terminal to install the skill globally for Codex:
