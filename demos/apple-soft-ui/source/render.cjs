@@ -24,7 +24,8 @@ const mode=process.argv[2]||'all';
         for(const sec of [0,.8,1.5,2.5,3.3,3.9]){
           await renderStill({serveUrl,composition,frame:Math.round(sec*30),output:path.join(root,'.checks',`${name}_${sec}.png`),scale:.5,chromiumInstance:browser});
         }
-        await renderStill({serveUrl,composition,frame:Math.round(2.5*30),output:path.join(root,'posters',`${name}.png`),scale:1,chromiumInstance:browser});
+        const posterSec=id==='05-Learn'?3.0:2.5;
+        await renderStill({serveUrl,composition,frame:Math.round(posterSec*30),output:path.join(root,'posters',`${name}.png`),scale:1,chromiumInstance:browser});
       }
       if(mode==='all'||mode==='media'){
         console.log('Rendering '+name);

@@ -6,7 +6,7 @@ An open-source AI motion director for Codex that turns natural-language briefs i
 
 ## Apple Soft UI motion showcase
 
-Five short conceptual films show the director's visual language. Each GIF opens the full MP4; [source and production notes](demos/apple-soft-ui/README.md) are included.
+Five short conceptual films use distinct physical actions and camera paths: dolly, fold, follow, fly-through, and transfer. Each GIF opens the full MP4; [source and production notes](demos/apple-soft-ui/README.md) are included.
 
 [Watch the 20-second showreel](demos/apple-soft-ui/videos/00_Showreel.mp4).
 
